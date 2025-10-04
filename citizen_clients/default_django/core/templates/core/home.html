@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% block title %}UFRECS Citizen{% endblock %}
+{% block body_page %}home{% endblock %}
+
+{% block content %}
+  {# Home Grid: 4 cards #}
+  <div class="row row-cols-2 row-cols-lg-4 g-3 py-2">
+    <div class="col">
+      <a class="text-decoration-none" href="{% url 'core:global_stats' %}" up-follow>
+        <div class="card h-100 text-center p-4">
+          <div class="display-6">📊</div>
+          <div class="mt-2 fw-semibold">Global Stats</div>
+        </div>
+      </a>
+    </div>
+    <div class="col">
+      <a class="text-decoration-none" href="{% url 'core:global_results' %}" up-follow>
+        <div class="card h-100 text-center p-4">
+          <div class="display-6">🗳️</div>
+          <div class="mt-2 fw-semibold">Global Results</div>
+        </div>
+      </a>
+    </div>
+    <div class="col">
+      <a class="text-decoration-none" href="{% url 'core:select_stats' %}" up-follow>
+        <div class="card h-100 text-center p-4">
+          <div class="display-6">📈</div>
+          <div class="mt-2 fw-semibold">Poll Office Stats</div>
+        </div>
+      </a>
+    </div>
+    <div class="col">
+      <a class="text-decoration-none" href="{% url 'core:select_results' %}" up-follow>
+        <div class="card h-100 text-center p-4">
+          <div class="display-6">✅</div>
+          <div class="mt-2 fw-semibold">Poll Office Results</div>
+        </div>
+      </a>
+    </div>
+  </div>
+{% endblock %}
+

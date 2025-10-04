@@ -1,0 +1,55 @@
+/* Copied from default_html/assets/css/styles.css */
+/*
+  UFRECS Citizen (Django core app)
+  - Minimal custom styles. Bootstrap handles most layout and components.
+  - Each section and major element is documented for clarity.
+*/
+
+/* Theme colors: Primary (green), Secondary (red), Tertiary (yellow) */
+:root {
+  --bs-primary: #198754;   /* green */
+  --bs-secondary: #dc3545; /* red */
+  --app-tertiary: #ffc107; /* yellow */
+
+  /* Optional: adjust other derived colors if needed */
+  --bs-link-color: var(--bs-primary);
+  --bs-link-hover-color: #146c43;
+}
+
+.bg-tertiary { background-color: var(--app-tertiary) !important; }
+.text-tertiary { color: var(--app-tertiary) !important; }
+.border-tertiary { border-color: var(--app-tertiary) !important; }
+
+/* Ensure main content has some breathing room on small screens */
+main[data-up-main] {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+/* Clock bar styling similar to Flutter surfaceVariant */
+.clock-bar { background: #fff7cc; border-bottom: 1px solid #f0e2a2; } /* light tertiary */
+
+.clock-bar .clock-text {
+  font-weight: 500;
+}
+
+/* Table row accents for sources */
+.row-accepted { background-color: rgba(25, 135, 84, 0.15); }
+
+.row-verified { background-color: rgba(255, 193, 7, 0.2); } /* tertiary */
+
+/* Narrow side panel width on wide layouts (mimics Flutter split view) */
+@media (min-width: 992px) {
+  .stats-side {
+    max-width: 380px;
+  }
+}
+
+/* Navbar accents */
+.navbar { border-top: 4px solid var(--bs-primary); }
+.navbar .nav-link.active, .navbar .nav-link:focus { color: var(--bs-primary) !important; }
+.navbar .nav-link:hover { color: var(--bs-secondary) !important; }
+
+/* Card accents on home */
+.card:hover { border-color: var(--bs-primary); box-shadow: 0 0.125rem 0.5rem rgba(25, 135, 84, 0.15); }
+

@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Poll Office Stats • UFRECS Citizen{% endblock %}
+{% block body_page %}poll-office-stats{% endblock %}
+
+{% block content %}
+  <h1 class="h4 text-primary"><span id="page-title-text">Stats</span></h1>
+  <div id="page-root" aria-live="polite"><div class="text-center p-5"><div class="spinner-border" role="status"></div></div></div>
+{% endblock %}
+
+{% block body_extra %}
+  <script src="{% static 'core/js/pages/poll_office_stats.js' %}"></script>
+{% endblock %}

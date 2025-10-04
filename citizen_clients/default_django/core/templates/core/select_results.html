@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Select Poll Office (Results) • UFRECS Citizen{% endblock %}
+{% block nav_select_results_active %}active{% endblock %}
+{% block body_page %}select-results{% endblock %}
+
+{% block head_extra %}
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+  <h1 class="h4 text-primary">Select Poll Office (Results)</h1>
+  <div class="row g-3 mt-1">
+    <div class="col-12 col-lg-8">
+      <label for="office-select" class="form-label">Poll Office</label>
+      <select id="office-select" class="form-select" style="width: 100%"></select>
+      <div class="form-text">Type at least 3 characters to search</div>
+    </div>
+    
+    <div class="col-12">
+      <div id="office-info" class="mt-2"></div>
+    </div>
+    <div class="col-12 col-lg-4 d-flex align-items-start justify-content-end">
+      <button id="open-button" class="btn btn-primary" disabled>View Results</button>
+    </div>
+  </div>
+  <div id="page-root"></div>
+{% endblock %}
+
+{% block body_extra %}
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="{% static 'core/js/pages/select_results.js' %}"></script>
+{% endblock %}

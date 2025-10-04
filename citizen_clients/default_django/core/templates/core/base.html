@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ufrecs-base-api-url" content="{{ UFRECS_BASE_API_URL|default:'http://localhost:8000' }}">
+    <title>{% block title %}UFRECS Citizen{% endblock %}</title>
+
+    {# Unpoly and Bootstrap CSS via CDN #}
+{#    <link rel="stylesheet" href="https://unpkg.com/unpoly@3.8.0/unpoly.min.css">#}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    {# App CSS #}
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+    {% block head_extra %}{% endblock %}
+  </head>
+  <body data-page="{% block body_page %}{% endblock %}"
+        data-url-poll-stats="{% url 'core:poll_office_stats' %}"
+        data-url-poll-results="{% url 'core:poll_office_results' %}">
+
+    <nav class="navbar navbar-expand-lg bg-light border-bottom" role="navigation" aria-label="Main navigation">
+      <div class="container-xxl">
+        <a class="navbar-brand" href="{% url 'core:home' %}" up-follow>UFRECS Citizen</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbars">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link {% block nav_global_stats_active %}{% endblock %}" href="{% url 'core:global_stats' %}" up-follow>Global Stats</a></li>
+            <li class="nav-item"><a class="nav-link {% block nav_global_results_active %}{% endblock %}" href="{% url 'core:global_results' %}" up-follow>Global Results</a></li>
+            <li class="nav-item"><a class="nav-link {% block nav_select_stats_active %}{% endblock %}" href="{% url 'core:select_stats' %}" up-follow>Poll Office Stats</a></li>
+            <li class="nav-item"><a class="nav-link {% block nav_select_results_active %}{% endblock %}" href="{% url 'core:select_results' %}" up-follow>Poll Office Results</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container-xxl py-3" data-up-main>
+      {% block content %}{% endblock %}
+    </main>
+
+    {# Vendor JS #}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+{#    <script src="https://unpkg.com/unpoly@3.8.0/unpoly.min.js"></script>#}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    {% block body_extra %}{% endblock %}
+  </body>
+  </html>

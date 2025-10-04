@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Global Results • UFRECS Citizen{% endblock %}
+{% block nav_global_results_active %}active{% endblock %}
+{% block body_page %}global-results{% endblock %}
+
+{% block content %}
+  <h1 class="h4 text-primary">Global Results</h1>
+  <div id="page-root" aria-live="polite"><div class="text-center p-5"><div class="spinner-border" role="status"></div></div></div>
+{% endblock %}
+
+{% block body_extra %}
+  <script src="{% static 'core/js/pages/global_results.js' %}"></script>
+{% endblock %}
