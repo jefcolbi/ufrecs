@@ -101,7 +101,6 @@ class ProxyView(View):
         params = request.GET.copy()
         base = (getattr(settings, 'UFRECS_BASE_API_URL', '') or '').rstrip('/') + '/'
         url = urljoin(base, path.lstrip('/'))
-        print(f"{url = }")
 
         try:
             resp = requests.get(url, params=params, headers={'X-From-Proxy': '1'}, timeout=10)

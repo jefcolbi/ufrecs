@@ -128,7 +128,7 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 # Application config exposed to templates and JS
 # Default matches the Flutter app's default
-UFRECS_BASE_API_URL = 'http://localhost:8448'
+UFRECS_BASE_API_URL = 'http://localhost:8448 '
 
 # Basic logging to console with module-aware loggers
 LOGGING = {

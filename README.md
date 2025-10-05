@@ -1,6 +1,6 @@
 # Ultra-Fraud-Resistant Electoral Control System
 
-UFRECS a.k.a is an electoral control system built to be ultra-resistant to fraud.
+UFRECS a.k.a Ultra-Fraud-Resistant Electoral Control System is an electoral control system built to be ultra-resistant to fraud.
 
 It is meant to be used against delinquant governments which doesn't hesitate
 to rig elections to stay in power.
